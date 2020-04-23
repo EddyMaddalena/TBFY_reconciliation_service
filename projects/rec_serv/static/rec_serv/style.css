@@ -1,0 +1,61 @@
+
+.test{
+	color: red;
+}
+
+html, body {
+	height: 100%;
+	font-size: .9em;
+}
+
+body {
+	background: #ffffff;
+	display: flex;
+	flex-flow: column;
+}
+
+form{
+	height: 100%;
+}
+
+#top{
+	bottom: 85px;
+	position: absolute;
+	top: 0;
+	margin: 0;
+	padding: 0;
+}
+
+#footer{
+	bottom: 0; 
+	position: absolute; 
+	width: 100%;    
+
+}
+
+.tooltip.in{opacity:1!important;}
+
+.tooltip-inner {
+	height: 395px;
+	max-width: 406px;
+	width: 406px; 
+	padding: 3px;
+}
+
+.tooltip.show {
+	opacity: 1;
+} 
+
+.pan_answer{
+}
+
+.btn-reset{
+	position: absolute;
+	bottom: 0;
+	right: : 0;
+}
+
+.reduced-opaicty{
+	opacity: .3;
+}
+

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<title>Reconciliation Service task</title>
+
+	<!-- JQuery -->
+	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<!-- Bootstrap JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+	<!-- Resolution Service dependences -->
+	<link href="{{ url_for('bp_rec_serv.static', filename='rec_serv/style.css') }}" rel="stylesheet">
+	<script src="{{ url_for('bp_rec_serv.static', filename='rec_serv/script.js') }}"></script>
+
+</head>
+
+<body>
+
+	<form name='mturk_form' method='post' id='mturk_form' action='{{ data.turkSubmitTo }}/mturk/externalSubmit' class="h-100 w-100">
+		<input type='hidden' value='{{ data.assignmentId }}' name='assignmentId' id='assignmentId' />
+
+		<div class="container-fluid mt-1" id="top">
+			<div id="carousel" class="carousel slide h-100" data-ride="carousel" data-interval="false">
+				<div class="carousel-inner h-100" >
+
+
+					{% include 'rec_serv/instructions.html' %}
+
+					{% include 'rec_serv/slide_company.html' %}
+
+					<div class="carousel-item" id="slide-q-check"> </div>
+
+					{% include 'rec_serv/slide_failure.html' %}
+
+					{% include 'rec_serv/slide_success.html' %}
+
+					{% include 'rec_serv/slide_revisit.html' %}
+
+				</div>
+			</div>
+		</div>
+
+		<div class="row  w-100 m-0 p-1 bg-light border-top" id="footer">
+			<div class="col-2 ">
+				<a class="btn btn-sm btn-info float-left d-none" href="#carousel" role="button" data-slide="prev" id="btn-back">Back</a>
+			</div>
+
+			<div class="col-8 ">
+				<div class="progress w-100 float-right mt-2" style="height: 22px;">
+					<div id="dynamic" class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+						<span id="current-progress"></span>
+					</div>
+				</div>
+			</div>
+			<div class="col-2">
+				<a class="btn btn-sm btn-info float-right" href="#carousel" role="button" data-slide="next" id='btn-next'>Next</a>
+			</div>
+		</div>
+
+	</form>
+</body>
+</html>

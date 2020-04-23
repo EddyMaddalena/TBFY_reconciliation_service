@@ -1,0 +1,133 @@
+{% for company in data.companies %}
+
+{% if loop.index == 1 %}
+<div class="carousel-item h-100 company-item btn-next" id="slide_company_{{ loop.index }}"  g="{{ company.g }}">
+
+	{% else %}
+	<div class="carousel-item h-100 company-item btn-back btn-next" g="{{ company.g }}">
+		{% endif %}
+
+
+		<input type='hidden' name='company_{{loop.index}}' id='company_{{loop.index}}' value="{{ company.id_in_db }}" />
+
+		<div class="container border rounded p-3 h-100" > 
+			<div class="row h-100">
+
+				<!-- Begin Col-left -->
+				<div class="col-4 h-100 col-left"> 
+
+					<h5> Company ( {{ loop.index }} of {{ loop.length  }}) </h5>
+
+					<h6>Available info </h6>
+
+					<table>
+
+						<tr>
+							<th class="small text-muted pr-2" scope="row">Name</th>
+							<td> {{ company.name }} </td>
+						</tr>
+
+						<tr>
+							<th class="small text-muted pr-2" scope="row">Full address</th>
+							<td> {{ company.full_address }} </td>
+						</tr>
+
+						<tr>
+							<th class="small text-muted pr-2" scope="row">Street address</th>
+							<td> {{ company.street_address }} </td>
+						</tr>
+
+						<tr>
+							<th class="small text-muted pr-2" scope="row">Locality</th>
+							<td> {{ company.locality }} </td>
+						</tr>
+
+						<tr>
+							<th class="small text-muted pr-2" scope="row">Postcode</th>
+							<td> {{ company.postcode }} </td>
+						</tr>
+
+						<tr>
+							<th class="small text-muted pr-2" scope="row">Country</th>
+							<td> {{ company.country }} </td>
+						</tr>
+
+					</table>
+
+					<h6 class="mt-4">Your answer</h6>
+					<div class="pan_answer p-3 bg-light rounded border">
+
+						<div class="form-row">
+							<div class="form-group col-md-12">
+								<span>Paste here the <a href="#" data-toggle="tooltip"  data-placement="right" data-original-title='<img src="{{ url_for("bp_rec_serv.static", filename="rec_serv/screenshot_open_corporates.png") }}" height="389px" width="400px">'>Company Number</a>: </span>
+								<input type="text" class="form-control company-number" id="comp_number_{{loop.index}}" name="comp_number_{{loop.index}}">
+							</div>
+						</div>
+
+						<label>How confident are you about your answer?</label>
+
+						<div class="row">
+							<div class="col-8 worker_confidence">
+
+
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="confidence_{{loop.index}}" id="complitely_confident_{{loop.index}}" value="complitely_confident" >
+									<label class="form-check-label" for="complitely_confident_{{loop.index}}">
+										Complitely confident
+									</label>
+								</div>
+
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="confidence_{{loop.index}}" id="moderately_confident_{{loop.index}}" value="moderately_confident">
+									<label class="form-check-label" for="moderately_confident_{{loop.index}}">
+										Moderately confident
+									</label>
+								</div>
+
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="confidence_{{loop.index}}" id="slightly_confident_{{loop.index}}" value="slightly_confident" >
+									<label class="form-check-label" for="slightly_confident_{{loop.index}}">
+										Slightly confident
+									</label>
+								</div>
+								
+								
+
+							</div>
+							<!-- <div class="col-3"> -->
+								<!-- <a class="btn btn-info btn-sm btn-reset text-white" role="button" > Reset</a> -->
+								<!-- </div> -->
+							</div>
+
+						</div>
+
+						<div class="form-check mt-2">
+							<input class="form-check-input cb_not_confident" type="checkbox" value="" id="cb_{{loop.index}}" name="cb_{{loop.index}}"  >
+							<label class="form-check-label" for="cb_{{loop.index}}">
+								Not enough info to identify the company
+							</label>
+						</div>
+
+						<div class="border p-2 mt-4">
+							<p><b>Tips</b></p>
+							<p>The OpenCorporate.com page might take a few seconds to open</p>
+							<p>Enable the <b>exclude inactive</b> filter, to make your search easier</p>
+
+
+						</div>
+
+
+					</div>
+					<!-- End Col-left -->
+
+					<!-- Begin Col-Right -->
+					<div class="col-8 h-100"> 
+						<iframe src="https://opencorporates.com/companies?inactive=false&order=score" class="rounded w-100 h-100"></iframe>
+					</div>
+					<!-- End Col-Right -->	
+
+				</div>	
+			</div>	
+		</div>
+
+		{% endfor %}
