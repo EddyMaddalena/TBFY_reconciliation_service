@@ -1,0 +1,76 @@
+<div class="carousel-item active h-100" id="slide-instructions" >
+	<div class="container border rounded p-3 h-100" > 
+		<div class="row h-100">
+			<div class="col-12">
+
+				<h4> Instructions </h4>
+				<p>
+					In this task, you are shown with a sequence of {{ data.companies|length }} companies. Each company has pieces of information are available, such as its name, address, postcode, and other (shown on the left side of the screen). Given a company, you are required to use its information to find its <a href="#" data-toggle="tooltip"  data-placement="top" data-original-title='<img src="{{ url_for("bp_rec_serv.static", filename="rec_serv/screenshot_open_corporates.png") }}" height="389px" width="400px">' style='text-decoration:underline;'>Company Number</a> in the <a href="https://opencorporates.com/">OpenCorporates</a> website (right side of the screen). 
+
+					<!-- In this task, you are required to retrieve the <a href="#" data-toggle="tooltip"  data-placement="top" data-original-title='<img src="{{ url_for("bp_rec_serv.static", filename="rec_serv/screenshot_open_corporates.png") }}" height="389px" width="400px">' style='text-decoration:underline;'>Company Number</a> of {{ data.companies|length }} companies in the <a href="https://opencorporates.com/">OpenCorporates</a> website. These companies are presented in a sequence. For each given company, some pieces of information are available to you to help your search. When identified the right company, you have to copy the <a href="#" data-toggle="tooltip"  data-placement="top" data-original-title='<img src="{{ url_for("bp_rec_serv.static", filename="rec_serv/screenshot_open_corporates.png") }}" height="389px" width="400px">' style='text-decoration:underline;'>Company Number</a> from the website back to the task.   -->
+				</p>
+				
+				<p>
+
+					The best way to finding a matching company consists in following these steps:
+
+					<ol>
+						<li>start by <span class="font-weight-bold">searching the whole</span> name;</li>
+						<li>if the query does not produce any matches then try <span class="font-weight-bold">removing the company suffix</span>;</li>
+						<li>if you have been given a jurisdiction, make sure to <span class="font-weight-bold">filter by jurisdiction</span>.</li>
+					</ol>
+
+					When you find the best matching company in OpenCorporates, paste the <a href="#" data-toggle="tooltip"  data-placement="top" data-original-title='<img src="{{ url_for("bp_rec_serv.static", filename="rec_serv/screenshot_open_corporates.png") }}" height="389px" width="400px">' style='text-decoration:underline;'>Company Number</a> in the proper text field, and express your level of confidence, choosing among: 
+
+					<ul>
+						<li><b>Completely confident</b>: There was one obvious candidate, either because there was only one result or only one result with a matching address</li>
+						<li><b>Moderately confident</b>: There were several candidates with similar names, but one seemed to be the best</li>
+						<li><b>Slightly confident</b>: There were no obvious candidates</li>
+					</ul>
+
+					You can click on the "Not enough info to identify the company", when the given information does not allow you to find any good match. 
+				</p>
+
+				<h6>Tips</h6> 
+				<p>
+					<ul>
+						<li>You can use Google or any other website to collect information that can help your searh.</li>
+						<li>You can perform you search in the <a href="https://opencorporates.com/">OpenCorporates</a> in a separate tab if you feel more confortable.</li>
+						<li>Enable the <b>exclude inactive</b> filter to make your search easier</li>
+					</ul>
+				</p>									
+
+
+				<!-- 	
+				<h4> Good examples </h4>
+					<p>
+						Here you are shown with some good example of company finding..<br> 
+
+						<b class="text-info">[Complete this part with good examples of resolution]</b>
+					</p> 
+				-->
+
+				<!--
+					<h4> Bad example </h4>
+					<p>
+						Here you are show with what not to do to perform you job properly.<br>
+
+						<b class="text-info">[Complete this part with bad examples of resolution]</b>
+					</p> -->
+
+				<!-- <h4> Ethics and guideline</h4>
+				<p>
+					Please read these instructions carefully before deciding whether to complete the task. Note that there are some checks throughout the task, and if you do not perform these correctly you will not be able to complete the task and get paid. The data from this task is being gathered for research purposes. No personally identifying information is recorded. Participation is entirely voluntary, and you are free to discontinue at any point. The task has been approved by the Ethics Committee of the University of Southampton on <b class="text-info">[date of Ethical Approval]</b> with ERGO II approval number <b class="text-info">[No. of Ethica Approval]</b>.
+				</p> -->
+
+
+
+				<h4> Guidelines</h4>
+				<p>
+					Please read these instructions carefully before deciding whether to complete the task. Note that there are some checks throughout the task, and if you do not perform these correctly you will not be able to complete the task and get paid. The data from this task is being gathered for research purposes. No personally identifying information is recorded. Participation is entirely voluntary, and you are free to discontinue at any point.
+				</p>
+
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,4 @@
+ocid	type	release_date	name	opencorporates_id	country_code	full_address	street_address	locality	postcode	country
+ocds-123456-0001-ABCDEFGHI	buyer	2019-03-22T00:00:22+00:00	Wolverhampton City Council	NA	gb	Civic Centre, St Peters Square  WV1 1RL	Civic Centre, St Peters Square		WV1 1RL	United Kingdom
+ocds-123456-0002-ABCDEFGHI	buyer	2019-09-13T16:00:45+00:00	University of Leeds	/companies/gb/RC000658	gb	Purchasing Office 31 Cromer Terrace Leeds LS2 9JU	Purchasing Office 31 Cromer Terrace	Leeds	LS2 9JU	United Kingdom
+ocds-123456-0003-ABCDEFGHI	buyer	2019-11-03T00:33:00+00:00	Newcastle City Council	NA	gb	4th Floor, Civic Centre Newcastle upon Tyne NE1 8QH	4th Floor, Civic Centre	Newcastle upon Tyne	NE1 8QH	United Kingdom
