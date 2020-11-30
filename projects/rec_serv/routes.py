@@ -29,8 +29,7 @@ URL_MONGO = os.environ["URL_MONGO"]
 client = pymongo.MongoClient(URL_MONGO)
 db     = client.get_default_database()
 
-# def id_generator(size=9, chars=string.ascii_uppercase + string.digits):
-# 	return ''.join(random.choice(chars) for _ in range(size))
+
 def id_generator(size=9, chars=string.digits):
 	return ''.join(random.choice(chars) for _ in range(size))
 
@@ -81,30 +80,6 @@ def get():
 		current_app.logger.debug( company )
 		current_app.logger.debug( '-------------'  )
 
-	'''
-	sample =  	[  	{   
-	'country': 'France',
-	'country_code': 'fr',
-	'full_address': 'M. le Président du Conseil Exécutif  ',
-	'locality': None,
-	'name': 'COLLECTIVITÉ DE CORSE',
-	'opencorporates_id': '/companies/fr/200076958',
-	'postcode': None,
-	'street_address': 'M. le Président du Conseil Exécutif',
-	'g': '4UK000556'
-	},{   
-	'country': 'France',
-	'country_code': 'fr',
-	'full_address': '101 rue de Tolbiac Paris 75013',
-	'locality': 'Paris',
-	'name': 'Unicancer ACHATS',
-	'opencorporates_id': '/companies/fr/532834090',
-	'postcode': '75013',
-	'street_address': '101 rue de Tolbiac',
-	'g': '5NC000892'
-	}]
-	data['companies'] = sample[1:4]
-	'''
 	
 	data['companies'] = companies
 
